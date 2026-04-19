@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Income BD - Mini App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #f0f2f5; color: #333; margin: 0; padding: 20px; }
+        .header { background: linear-gradient(135deg, #1e90ff, #00bfff); color: white; padding: 15px; border-radius: 10px; margin-bottom: 20px; text-align: center; font-weight: bold; }
+        .balance-container { display: flex; gap: 15px; margin-bottom: 25px; }
+        .balance-card { flex: 1; padding: 20px; border-radius: 15px; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .balance-job { background: linear-gradient(45deg, #32cd32, #228b22); }
+        .balance-ref { background: linear-gradient(45deg, #8a2be2, #4b0082); }
+        .balance-title { font-size: 12px; opacity: 0.9; text-transform: uppercase; }
+        .balance-amount { font-size: 22px; font-weight: bold; margin-top: 5px; }
+        .quick-services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .service-card { background: white; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .service-icon { font-size: 28px; color: #1e90ff; margin-bottom: 8px; }
+        .service-label { font-size: 11px; font-weight: 600; color: #555; display: block; }
+        .refer-section { background: white; margin-top: 25px; padding: 15px; border-radius: 12px; border: 1px dashed #1e90ff; text-align: center; }
+        .refer-title { font-size: 14px; font-weight: bold; color: #1e90ff; margin-bottom: 10px; }
+        .footer { margin-top: 30px; text-align: center; font-size: 12px; color: #888; }
+    </style>
+</head>
+<body>
+    <div class="header">🔥 Online Income BD 🔥</div>
+    <div class="balance-container">
+        <div class="balance-card balance-job">
+            <div class="balance-title">Job Balance</div>
+            <div class="balance-amount">৳ 165.00</div>
+        </div>
+        <div class="balance-card balance-ref">
+            <div class="balance-title">Referral Balance</div>
+            <div class="balance-amount">৳ 10.00</div>
+        </div>
+    </div>
+    <div class="quick-services">
+        <div class="service-card"><i class="fas fa-calendar-check service-icon"></i><span class="service-label">Daily Job</span></div>
+        <div class="service-card"><i class="fas fa-tasks service-icon"></i><span class="service-label">Microjob</span></div>
+        <div class="service-card"><i class="fas fa-chart-line service-icon"></i><span class="service-label">Leaderboard</span></div>
+        <div class="service-card"><i class="fas fa-envelope-open-text service-icon"></i><span class="service-label">Gmail Sell</span></div>
+        <div class="service-card"><i class="fab fa-facebook service-icon"></i><span class="service-label">FB Sell</span></div>
+        <div class="service-card"><i class="fas fa-wallet service-icon"></i><span class="service-label">Withdraw</span></div>
+        <div class="service-card"><i class="fas fa-users service-icon"></i><span class="service-label">My Team</span></div>
+        <div class="service-card"><i class="fas fa-gift service-icon"></i><span class="service-label">Gift Code</span></div>
+        <div class="service-card"><i class="fas fa-headset service-icon"></i><span class="service-label">Support</span></div>
+    </div>
+    <div class="refer-section">
+        <div class="refer-title">🎁 Refer & Earn Unlimited</div>
+        <p style="font-size: 11px; color: #666;">Invite friends and earn commission for each active registration!</p>
+    </div>
+    <div class="footer">© 2026 Online Income BD - All Rights Reserved</div>
+    <script>
+        const webapp = window.Telegram.WebApp;
+        webapp.expand();
+        webapp.ready();
+    </script>
+</body>
+</html>
