@@ -58,3 +58,52 @@
     </script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Income BD</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px; }
+        .header { background: linear-gradient(135deg, #1e90ff, #00bfff); color: white; padding: 15px; border-radius: 10px; text-align: center; font-weight: bold; margin-bottom: 20px; }
+        .balance-container { display: flex; gap: 10px; margin-bottom: 25px; }
+        .card { flex: 1; padding: 20px; border-radius: 15px; color: white; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .bg-green { background: #28a745; } .bg-purple { background: #6f42c1; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .item { background: white; padding: 15px; border-radius: 12px; text-align: center; border: 1px solid #ddd; cursor: pointer; }
+        .item:active { background: #e0e0e0; }
+        .item i { font-size: 26px; color: #1e90ff; margin-bottom: 8px; }
+        .item span { font-size: 11px; font-weight: bold; color: #444; display: block; }
+    </style>
+</head>
+<body>
+    <div class="header">🔥 Online Income BD 🔥</div>
+    
+    <div class="balance-container">
+        <div class="card bg-green"><div>Balance</div><b>৳ 165.00</b></div>
+        <div class="card bg-purple"><div>Referral</div><b>৳ 10.00</b></div>
+    </div>
+
+    <div class="grid">
+        <div class="item" onclick="send('daily_job')"><i class="fas fa-calendar-check"></i><span>Daily Job</span></div>
+        <div class="item" onclick="send('micro_job')"><i class="fas fa-tasks"></i><span>Microjob</span></div>
+        <div class="item" onclick="send('gmail_sell')"><i class="fas fa-envelope"></i><span>Gmail Sell</span></div>
+        <div class="item" onclick="send('fb_sell')"><i class="fab fa-facebook"></i><span>FB Sell</span></div>
+        <div class="item" onclick="send('withdraw')"><i class="fas fa-wallet"></i><span>Withdraw</span></div>
+        <div class="item" onclick="send('support')"><i class="fas fa-headset"></i><span>Support</span></div>
+    </div>
+
+    <script>
+        const webapp = window.Telegram.WebApp;
+        webapp.expand();
+        webapp.ready();
+        function send(action) {
+            webapp.sendData(action); // এই লাইনটি বটের সাথে কানেক্ট করবে
+        }
+    </script>
+</body>
+</html>
