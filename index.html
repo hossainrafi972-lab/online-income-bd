@@ -16,16 +16,16 @@
         .balance-title { font-size: 12px; opacity: 0.9; text-transform: uppercase; }
         .balance-amount { font-size: 22px; font-weight: bold; margin-top: 5px; }
         .quick-services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .service-card { background: white; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #eee; cursor: pointer; }
-        .service-card:active { background: #e0e0e0; }
+        .service-card { background: white; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #eee; cursor: pointer; transition: 0.3s; }
+        .service-card:active { background: #e0e0e0; transform: scale(0.95); }
         .service-icon { font-size: 28px; color: #1e90ff; margin-bottom: 8px; }
         .service-label { font-size: 11px; font-weight: 600; color: #555; display: block; }
-        .refer-section { background: white; margin-top: 25px; padding: 15px; border-radius: 12px; border: 1px dashed #1e90ff; text-align: center; }
         .footer { margin-top: 30px; text-align: center; font-size: 12px; color: #888; }
     </style>
 </head>
 <body>
     <div class="header">🔥 Online Income BD 🔥</div>
+    
     <div class="balance-container">
         <div class="balance-card balance-job">
             <div class="balance-title">Job Balance</div>
@@ -36,73 +36,31 @@
             <div class="balance-amount">৳ 10.00</div>
         </div>
     </div>
+
     <div class="quick-services">
-        <div class="service-card" onclick="sendData('daily_job')"><i class="fas fa-calendar-check service-icon"></i><span class="service-label">Daily Job</span></div>
-        <div class="service-card" onclick="sendData('micro_job')"><i class="fas fa-tasks service-icon"></i><span class="service-label">Microjob</span></div>
-        <div class="service-card" onclick="sendData('leaderboard')"><i class="fas fa-chart-line service-icon"></i><span class="service-label">Leaderboard</span></div>
-        <div class="service-card" onclick="sendData('gmail_sell')"><i class="fas fa-envelope-open-text service-icon"></i><span class="service-label">Gmail Sell</span></div>
-        <div class="service-card" onclick="sendData('fb_sell')"><i class="fab fa-facebook service-icon"></i><span class="service-label">FB Sell</span></div>
-        <div class="service-card" onclick="sendData('withdraw')"><i class="fas fa-wallet service-icon"></i><span class="service-label">Withdraw</span></div>
-        <div class="service-card" onclick="sendData('team')"><i class="fas fa-users service-icon"></i><span class="service-label">My Team</span></div>
-        <div class="service-card" onclick="sendData('gift_code')"><i class="fas fa-gift service-icon"></i><span class="service-label">Gift Code</span></div>
-        <div class="service-card" onclick="sendData('support')"><i class="fas fa-headset service-icon"></i><span class="service-label">Support</span></div>
+        <div class="service-card" onclick="sendTask('daily_job')"><i class="fas fa-calendar-check service-icon"></i><span class="service-label">Daily Job</span></div>
+        <div class="service-card" onclick="sendTask('micro_job')"><i class="fas fa-tasks service-icon"></i><span class="service-label">Microjob</span></div>
+        <div class="service-card" onclick="sendTask('leaderboard')"><i class="fas fa-chart-line service-icon"></i><span class="service-label">Leaderboard</span></div>
+        <div class="service-card" onclick="sendTask('gmail_sell')"><i class="fas fa-envelope-open-text service-icon"></i><span class="service-label">Gmail Sell</span></div>
+        <div class="service-card" onclick="sendTask('fb_sell')"><i class="fab fa-facebook service-icon"></i><span class="service-label">FB Sell</span></div>
+        <div class="service-card" onclick="sendTask('withdraw')"><i class="fas fa-wallet service-icon"></i><span class="service-label">Withdraw</span></div>
+        <div class="service-card" onclick="sendTask('team')"><i class="fas fa-users service-icon"></i><span class="service-label">My Team</span></div>
+        <div class="service-card" onclick="sendTask('gift_code')"><i class="fas fa-gift service-icon"></i><span class="service-label">Gift Code</span></div>
+        <div class="service-card" onclick="sendTask('support')"><i class="fas fa-headset service-icon"></i><span class="service-label">Support</span></div>
     </div>
+
     <div class="footer">© 2026 Online Income BD - All Rights Reserved</div>
-    <script>
-        const webapp = window.Telegram.WebApp;
-        webapp.expand();
-        webapp.ready();
-        function sendData(command) {
-            webapp.sendData(command);
-        }
-    </script>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Income BD</title>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px; }
-        .header { background: linear-gradient(135deg, #1e90ff, #00bfff); color: white; padding: 15px; border-radius: 10px; text-align: center; font-weight: bold; margin-bottom: 20px; }
-        .balance-container { display: flex; gap: 10px; margin-bottom: 25px; }
-        .card { flex: 1; padding: 20px; border-radius: 15px; color: white; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .bg-green { background: #28a745; } .bg-purple { background: #6f42c1; }
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-        .item { background: white; padding: 15px; border-radius: 12px; text-align: center; border: 1px solid #ddd; cursor: pointer; }
-        .item:active { background: #e0e0e0; }
-        .item i { font-size: 26px; color: #1e90ff; margin-bottom: 8px; }
-        .item span { font-size: 11px; font-weight: bold; color: #444; display: block; }
-    </style>
-</head>
-<body>
-    <div class="header">🔥 Online Income BD 🔥</div>
-    
-    <div class="balance-container">
-        <div class="card bg-green"><div>Balance</div><b>৳ 165.00</b></div>
-        <div class="card bg-purple"><div>Referral</div><b>৳ 10.00</b></div>
-    </div>
-
-    <div class="grid">
-        <div class="item" onclick="send('daily_job')"><i class="fas fa-calendar-check"></i><span>Daily Job</span></div>
-        <div class="item" onclick="send('micro_job')"><i class="fas fa-tasks"></i><span>Microjob</span></div>
-        <div class="item" onclick="send('gmail_sell')"><i class="fas fa-envelope"></i><span>Gmail Sell</span></div>
-        <div class="item" onclick="send('fb_sell')"><i class="fab fa-facebook"></i><span>FB Sell</span></div>
-        <div class="item" onclick="send('withdraw')"><i class="fas fa-wallet"></i><span>Withdraw</span></div>
-        <div class="item" onclick="send('support')"><i class="fas fa-headset"></i><span>Support</span></div>
-    </div>
 
     <script>
+        // টেলিগ্রাম ওয়েব অ্যাপ ইনিশিয়ালাইজেশন
         const webapp = window.Telegram.WebApp;
-        webapp.expand();
+        webapp.expand(); // অ্যাপটি পুরো স্ক্রিন জুড়ে ওপেন হবে
         webapp.ready();
-        function send(action) {
-            webapp.sendData(action); // এই লাইনটি বটের সাথে কানেক্ট করবে
+
+        // এই ফাংশনটি বাটনে ক্লিক করলে বটের কাছে টেক্সট পাঠাবে
+        function sendTask(taskName) {
+            webapp.sendData(taskName); 
+            // বাটন টিপলে সিগন্যাল পাঠিয়ে অ্যাপটি বন্ধ হয়ে যাবে যেন ইউজার বটের রিপ্লাই দেখতে পায়
         }
     </script>
 </body>
